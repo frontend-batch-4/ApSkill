@@ -1,5 +1,5 @@
 import logo from "../images/Logo_Apskill.svg";
-import Profile from "../images/Profile.svg";
+import PhotoProfile from "../images/PhotoProfile.svg";
 import Button from "../components/Button";
 import Foto1 from "../images/FotoHome.svg";
 import Adobe from "../images/Adobe.svg";
@@ -17,23 +17,31 @@ import PictureFSD from "../images/PictureFSD.svg";
 import PictureLeadership from "../images/PictureLeadership.svg";
 import IconIchsan from "../images/IconIchsan.svg";
 import LogoPetik from "../images/LogoPetik.svg";
+import { Link } from "react-router-dom";
+import Profile from './Profile';
 
 export default function Home() {
   return (
     <>
       {/* Section Header */}
       <header className="flex items-center justify-between p-2 border-b-2 border-neutral40 bg-neutral10">
-        <div className="pt-2 pl-10">
-          <img className="h-6" src={logo} alt="Logo" />
-        </div>
+        <Link to="/Profile">
+          <div className="pt-2 pl-10">
+            <img className="h-6" src={logo} alt="Logo" />
+          </div>
+        </Link>
         <div className="flex-grow flex justify-center space-x-4">
-          <p className="font-semibold text-primary">Beranda</p>
-          <p className="font-semibold">Kelas</p>
+          <Link to="/Home">
+            <p className="font-semibold text-primary">Beranda</p>
+          </Link>
+          <Link to="/KelasBerlangsung">
+            <p className="font-semibold">Kelas</p>
+          </Link>
         </div>
         <div className="flex pr-10 justify-end">
           <img
             className="h-12 rounded-full bg-Info"
-            src={Profile}
+            src={PhotoProfile}
             alt="Profile"
           />
         </div>

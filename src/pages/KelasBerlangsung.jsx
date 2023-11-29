@@ -1,5 +1,6 @@
 import logo from "../images/Logo_Apskill.svg";
-import Profile from "../images/Profile.svg";
+import PhotoProfile from "../images/PhotoProfile.svg";
+import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import Foto1 from "../images/FotoHome.svg";
 import Adobe from "../images/Adobe.svg";
@@ -27,13 +28,15 @@ export default function KelasBerlangsung() {
           <img className="h-6" src={logo} alt="Logo" />
         </div>
         <div className="flex-grow flex justify-center space-x-4">
-          <p className="font-semibold">Beranda</p>
+          <Link to="/Home">
+            <p className="font-semibold">Beranda</p>
+          </Link>
           <p className="font-semibold text-primary">Kelas</p>
         </div>
         <div className="flex pr-10 justify-end">
           <img
             className="h-12 rounded-full bg-Info"
-            src={Profile}
+            src={PhotoProfile}
             alt="Profile"
           />
         </div>
@@ -44,8 +47,12 @@ export default function KelasBerlangsung() {
           <h1 className="font-bold text-4xl text-center">Kelas Saya</h1>
         </div>
         <div className="flex-grow flex justify-center space-x-4 mt-8 gap-4">
-          <p className="font-semibold">Kelas Berlangsung</p>
-          <p className="font-bold text-primary">Kelas Selesai</p>
+          <Link to="/KelasBerlangsung">
+            <p className="font-bold text-primary ">Kelas Berlangsung</p>
+          </Link>
+          <Link to="/KelasSelesai">
+            <p className="font-semibold">Kelas Selesai</p>
+          </Link>
         </div>
         {/* Card Selesai */}
         <div className="flex gap-12 items-center justify-center mt-10 ">
@@ -58,9 +65,7 @@ export default function KelasBerlangsung() {
                   className=" text-white rounded-lg"
                 />
               </div>
-              <h2 className="font-semibold text-xl p-4">
-                Product Management
-              </h2>
+              <h2 className="font-semibold text-xl p-4">Product Management</h2>
             </div>
             <div className=" flex justify-center w-full">
               <div className="pt-2 mb-8 w-10/12">
@@ -68,31 +73,7 @@ export default function KelasBerlangsung() {
                   type={undefined}
                   className=" rounded p-2 text-neutral10 w-full"
                 >
-                  Jelajahi Lebih Lanjut
-                </Button>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col border rounded-lg w-72 border-neutral40">
-            <div className="flex flex-col items-star">
-              <div className="rounded-lg w-full">
-                <img
-                  src={PictureLeadership}
-                  alt="Icon"
-                  className=" text-white rounded-lg"
-                />
-              </div>
-              <h2 className="font-semibold text-xl p-4">
-              Pelatihan Leadership <br />
-              </h2>
-            </div>
-            <div className=" flex justify-center w-full">
-              <div className="pt-2 mb-8 w-10/12">
-                <Button
-                  type={undefined}
-                  className=" rounded p-2 text-neutral10 w-full"
-                >
-                  Jelajahi Lebih Lanjut
+                  Lanjutkan Kelas
                 </Button>
               </div>
             </div>
