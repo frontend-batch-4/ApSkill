@@ -5,6 +5,7 @@ import Register from "./pages/Register";
 import KelasSelesai from "./pages/KelasSelesai";
 import KelasBerlangsung from "./pages/KelasBerlangsung";
 import Profile from "./pages/Profile";
+import Kelas from "./pages/Kelas";
 
 // pages
 // contoh cara import komponen 👇👇👇
@@ -19,6 +20,7 @@ export default function App() {
       <Route path="/kelasselesai" element={<KelasSelesai/>} />
       <Route path="/kelasberlangsung" element={<KelasBerlangsung/>} />
       <Route path="/profile" element={<Profile/>} />
+      <Route path="/kelas" element={<Kelas/>} />
     </Routes>
   );
 }

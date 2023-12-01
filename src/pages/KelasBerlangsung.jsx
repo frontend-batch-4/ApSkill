@@ -23,40 +23,46 @@ export default function KelasBerlangsung() {
   return (
     <>
       {/* Section Header */}
-      <header className="flex items-center justify-between p-2 border-b-2 border-neutral40 bg-neutral10">
+      <header className="flex flex-col md:flex-row items-center justify-between p-2 border-b-2 border-neutral40 bg-neutral10">
         <div className="pt-2 pl-10">
-          <img className="h-6" src={logo} alt="Logo" />
+          <Link to="/Home">
+            <img className="h-6" src={logo} alt="Logo" />
+          </Link>
         </div>
-        <div className="flex-grow flex justify-center space-x-4">
+        <div className="flex-grow flex justify-center space-x-4 mt-4 md:mt-0">
           <Link to="/Home">
             <p className="font-semibold">Beranda</p>
           </Link>
-          <p className="font-semibold text-primary">Kelas</p>
+          <Link to="/KelasBerlangsung">
+            <p className="font-semibold text-primary">Kelas</p>
+          </Link>
         </div>
-        <div className="flex pr-10 justify-end">
-          <img
-            className="h-12 rounded-full bg-Info"
-            src={PhotoProfile}
-            alt="Profile"
-          />
-        </div>
+        <Link to="/Profile">
+          <div className="flex pr-10 justify-end mt-4 md:mt-0">
+            <img
+              className="h-12 rounded-full bg-Info"
+              src={PhotoProfile}
+              alt="Profile"
+            />
+          </div>
+        </Link>
       </header>
       {/* Section 2 */}
       <section className="flex-col justify-center items-center mt-12">
         <div>
           <h1 className="font-bold text-4xl text-center">Kelas Saya</h1>
         </div>
-        <div className="flex-grow flex justify-center space-x-4 mt-8 gap-4">
+        <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8 gap-4">
           <Link to="/KelasBerlangsung">
-            <p className="font-bold text-primary ">Kelas Berlangsung</p>
+            <p className="font-bold text-primary">Kelas Berlangsung</p>
           </Link>
           <Link to="/KelasSelesai">
             <p className="font-semibold">Kelas Selesai</p>
           </Link>
         </div>
         {/* Card Selesai */}
-        <div className="flex gap-12 items-center justify-center mt-10 ">
-          <div className="flex flex-col border rounded-lg w-72 border-neutral40">
+        <div className="flex flex-col md:flex-row gap-12 items-center justify-center mt-10 ">
+          <div className="flex flex-col border rounded-lg w-full md:w-72 border-neutral40">
             <div className="flex flex-col items-star">
               <div className="rounded-lg w-full">
                 <img
@@ -73,7 +79,7 @@ export default function KelasBerlangsung() {
                   type={undefined}
                   className=" rounded p-2 text-neutral10 w-full"
                 >
-                  Lanjutkan Kelas
+                  Jelajahi Lebih Lanjut
                 </Button>
               </div>
             </div>
@@ -205,8 +211,11 @@ export default function KelasBerlangsung() {
           <p className="font-semibold p-4 text-primary">RP.0</p>
         </div>
       </section>
+
+      <hr className="border-neutral30 border-t-2 w-full md:w-11/12 mx-auto mt-24" />
+      {/* Footer */}
       <footer className="footer bg-white text-black p-4 mt-32">
-        <div className="container mx-auto grid grid-cols-5 gap-8">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
           <div>
             <div className="col w-32">
               <img src={logo} alt="Logo Apskii" />

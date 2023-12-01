@@ -18,19 +18,19 @@ import PictureLeadership from "../images/PictureLeadership.svg";
 import IconIchsan from "../images/IconIchsan.svg";
 import LogoPetik from "../images/LogoPetik.svg";
 import { Link } from "react-router-dom";
-import Profile from './Profile';
 
 export default function Home() {
   return (
     <>
       {/* Section Header */}
-      <header className="flex items-center justify-between p-2 border-b-2 border-neutral40 bg-neutral10">
-        <Link to="/Profile">
-          <div className="pt-2 pl-10">
+      <header className="flex flex-col md:flex-row items-center justify-between p-2 border-b-2 border-neutral40 bg-neutral10">
+        <div className="pt-2 pl-10">
+          <Link to="/Home">
             <img className="h-6" src={logo} alt="Logo" />
-          </div>
-        </Link>
-        <div className="flex-grow flex justify-center space-x-4">
+          </Link>
+        </div>
+
+        <div className="flex-grow flex justify-center space-x-4 mt-4 md:mt-0">
           <Link to="/Home">
             <p className="font-semibold text-primary">Beranda</p>
           </Link>
@@ -38,23 +38,26 @@ export default function Home() {
             <p className="font-semibold">Kelas</p>
           </Link>
         </div>
-        <div className="flex pr-10 justify-end">
-          <img
-            className="h-12 rounded-full bg-Info"
-            src={PhotoProfile}
-            alt="Profile"
-          />
-        </div>
+        <Link to="/Profile">
+          <div className="flex pr-10 justify-end mt-4 md:mt-0">
+            <img
+              className="h-12 rounded-full bg-Info"
+              src={PhotoProfile}
+              alt="Profile"
+            />
+          </div>
+        </Link>
       </header>
       {/* Section 1 */}
-      <section className="flex flex-col items-center justify-center">
+      <section className="flex flex-col items-center justify-center px-4 md:px-0">
         <h1 className="text-center font-semibold text-4xl pt-14">
-          Pelajari apa pun, kapan pun, di mana pun untuk <br />
+          Pelajari apa pun, kapan pun, di mana pun untuk{" "}
+          <br className="md:hidden" />
           tingkatkan kemampuan kamu
         </h1>
         <p className="text-center pt-8 text-neutral60">
           Kursus online dan spesialisasi bersertifikat yang membantu kamu untuk
-          <br />
+          <br className="md:hidden" />
           meningkatkan keterampilan untuk bersaing di dunia kerja
         </p>
         <div className="pt-8">
@@ -68,7 +71,7 @@ export default function Home() {
         <p className="text-center pt-8 text-lg text-neutral70 font-semibold">
           Sertifikasi resmi dari berbagai perusahaan
         </p>
-        <div className=" flex space-x-20 p-8 mt-8 ">
+        <div className="flex flex-wrap justify-center space-x-4 md:space-x-20 p-8 mt-8 ">
           <img src={Adobe} alt="Adobe" />
           <img src={Amazon} alt="Amazon" />
           <img src={DigitalOcean} alt="DigitalOcean" />
@@ -77,15 +80,17 @@ export default function Home() {
         </div>
       </section>
       {/* Section 2 */}
-      <section className="flex mt-20">
-        <div className="w-1/2 flex flex-col ml-44 mt-32 ">
-          <h1 className=" font-bold text-4xl text-primary ">
-            Kenapa Harus Memilih <br />
+      <section className="flex flex-col md:flex-row mt-20 mx-4 md:mx-0">
+        <div className="w-full md:w-1/2 flex flex-col items-center md:items-start md:ml-44 mt-32 ">
+          <h1 className=" font-bold text-4xl text-primary text-center md:text-left">
+            Kenapa Harus Memilih <br className="hidden md:block" />
             ApSkill?
           </h1>
-          <p className=" text-neutral70 mt-5 ">
-            Kami memiliki banyak keunggulan dibandingkan kursus <br />
-            online lainnya. Jangan ragu untuk memilih kami, kami <br />
+          <p className=" text-neutral70 mt-5 text-center md:text-left">
+            Kami memiliki banyak keunggulan dibandingkan kursus{" "}
+            <br className="hidden md:block" />
+            online lainnya. Jangan ragu untuk memilih kami, kami{" "}
+            <br className="hidden md:block" />
             akan memberikan layanan terbaik.
           </p>
           <div>
@@ -98,7 +103,7 @@ export default function Home() {
           </div>
         </div>
         {/* Section 3 Card */}
-        <div className="grid grid-cols-2 gap-8 mr-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mr-4 md:mr-32">
           <div className="flex flex-col items-start space-y-2 p-4 border rounded-lg max-w-xs border-neutral30">
             <div className="p-2 bg-primarySurface rounded-full">
               <img
@@ -153,13 +158,13 @@ export default function Home() {
         </div>
       </section>
       {/* Section 4 */}
-      <section className="flex-col justify-center items-center mt-12">
+      <section className="flex-col justify-center items-center mt-12 px-4 md:px-0">
         <div>
           <h1 className=" font-bold text-4xl text-center">
             Kursus Paling Populer
           </h1>
         </div>
-        <div className="flex-grow flex justify-center space-x-4 mt-12 gap-8">
+        <div className="flex-grow flex justify-center flex-wrap space-x-4 mt-12 gap-8">
           <p className="font-semibold text-primary">Semua</p>
           <p className="text-neutral70">UI/UX</p>
           <p className="text-neutral70">Product Management</p>
@@ -167,8 +172,8 @@ export default function Home() {
         </div>
       </section>
       {/* Section Card */}
-      <section className="flex gap-4 mt-12 justify-center">
-        <div className="flex flex-col items-start space-y-2 border rounded-lg max-w-screen-sm border-neutral40">
+      <section className="flex flex-wrap gap-4 mt-12 justify-center px-4 md:px-0">
+        <div className="flex flex-col items-start space-y-2 border rounded-lg max-w-screen-sm border-neutral40 mb-4">
           <div className="rounded-lg w-full">
             <img
               src={ImagesUIUX}
@@ -181,7 +186,7 @@ export default function Home() {
           </h2>
           <p className="font-semibold p-4 text-primary">RP.0</p>
         </div>
-        <div className="flex flex-col items-start space-y-2 border rounded-lg max-w-screen-sm border-neutral40">
+        <div className="flex flex-col items-start space-y-2 border rounded-lg max-w-screen-sm border-neutral40 mb-4">
           <div className="rounded-lg w-full">
             <img
               src={PicturePM}
@@ -195,7 +200,7 @@ export default function Home() {
           </h2>
           <p className="font-semibold p-4 text-primary">RP.0</p>
         </div>
-        <div className="flex flex-col items-start space-y-2 border rounded-lg max-w-screen-sm border-neutral40">
+        <div className="flex flex-col items-start space-y-2 border rounded-lg max-w-screen-sm border-neutral40 mb-4">
           <div className="rounded-lg w-full">
             <img
               src={PictureFSD}
@@ -208,7 +213,7 @@ export default function Home() {
           </h2>
           <p className="font-semibold p-4 text-primary">RP.0</p>
         </div>
-        <div className="flex flex-col items-start space-y-2 border rounded-lg max-w-screen-sm border-neutral40">
+        <div className="flex flex-col items-start space-y-2 border rounded-lg max-w-screen-sm border-neutral40 mb-4">
           <div className="rounded-lg w-full">
             <img
               src={PictureLeadership}
@@ -224,15 +229,18 @@ export default function Home() {
         </div>
       </section>
       {/* Section 5 */}
-      <section className="flex-col items-start mt-12 ml-72">
+      <section className="flex-col items-start mt-12 ml-4 md:ml-72">
         <div>
           <p className="font-bold text-primary text-4xl items-start ">
             Pendapat mereka tentang ApSkil
           </p>
         </div>
+      </section>
+      {/* Section Card */}
+      <section>
         <div>
-          <div className="flex gap-4">
-            <div className="flex flex-col border rounded-lg w-80 mt-12 border-neutral40">
+          <div className="flex flex-wrap gap-4 justify-center">
+            <div className="flex flex-col items-start space-y-2 border rounded-lg w-full md:w-96 mt-12 p-4 border-neutral40">
               <div className="p-4">
                 <img src={LogoPetik} alt="Logo" />
               </div>
@@ -242,16 +250,16 @@ export default function Home() {
                   keterampilan baru. Saya sangat senang dengan ApSkil.
                 </h2>
               </div>
-              <div className="flex items-center justify-start p-2 rounded-full gap-4">
+              <div className="flex items-center justify-start p-6 rounded-full gap-4">
                 <img
                   src={IconIchsan}
                   alt="User Icon"
-                  className="h-8 w-8 text-white ml-2 rounded-3xl bg-Info"
+                  className="h-12 w-12 text-white  rounded-3xl bg-Info"
                 />
                 <p>Ichsan ghaniy</p>
               </div>
             </div>
-            <div className="flex flex-col border rounded-lg w-80 mt-12 border-neutral40">
+            <div className="flex flex-col items-start space-y-2 border rounded-lg w-full md:w-96 mt-12 p-4 border-neutral40">
               <div className="p-4">
                 <img src={LogoPetik} alt="Logo" />
               </div>
@@ -261,16 +269,16 @@ export default function Home() {
                   keterampilan baru. Saya sangat senang dengan ApSkil.
                 </h2>
               </div>
-              <div className="flex items-center justify-start p-2 rounded-full gap-4">
+              <div className="flex items-center justify-start p-6 rounded-full gap-4">
                 <img
                   src={IconIchsan}
                   alt="User Icon"
-                  className="h-8 w-8 text-white ml-2 rounded-3xl bg-Info"
+                  className="h-12 w-12 text-white  rounded-3xl bg-Info"
                 />
                 <p>Ichsan ghaniy</p>
               </div>
             </div>
-            <div className="flex flex-col border rounded-lg w-80 mt-12 border-neutral40">
+            <div className="flex flex-col items-start space-y-2 border rounded-lg w-full md:w-96 mt-12 p-4 border-neutral40">
               <div className="p-4">
                 <img src={LogoPetik} alt="Logo" />
               </div>
@@ -280,30 +288,11 @@ export default function Home() {
                   keterampilan baru. Saya sangat senang dengan ApSkil.
                 </h2>
               </div>
-              <div className="flex items-center justify-start p-2 rounded-full gap-4">
+              <div className="flex items-center justify-start p-6 rounded-full gap-4">
                 <img
                   src={IconIchsan}
                   alt="User Icon"
-                  className="h-8 w-8 text-white ml-2 rounded-3xl bg-Info"
-                />
-                <p>Ichsan ghaniy</p>
-              </div>
-            </div>
-            <div className="flex flex-col border rounded-lg w-80 mt-12 border-neutral40">
-              <div className="p-4">
-                <img src={LogoPetik} alt="Logo" />
-              </div>
-              <div className="items-center space-y-2 p-4 ">
-                <h2 className="font-semibold">
-                  Saya sudah bersama ApSkil dalam 1 tahun, Saya mendapat banyak
-                  keterampilan baru. Saya sangat senang dengan ApSkil.
-                </h2>
-              </div>
-              <div className="flex items-center justify-start p-2 rounded-full gap-4">
-                <img
-                  src={IconIchsan}
-                  alt="User Icon"
-                  className="h-8 w-8 text-white ml-2 rounded-3xl bg-Info"
+                  className="h-12 w-12 text-white  rounded-3xl bg-Info"
                 />
                 <p>Ichsan ghaniy</p>
               </div>
@@ -311,9 +300,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <hr className="border-neutral30 border-t-2 w-full md:w-11/12 mx-auto mt-24" />
       {/* Section Footer */}
       <footer className="footer bg-white text-black p-4 mt-32">
-        <div className="container mx-auto grid grid-cols-5 gap-8">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
           <div>
             <div className="col w-32">
               <img src={logo} alt="Logo Apskii" />
